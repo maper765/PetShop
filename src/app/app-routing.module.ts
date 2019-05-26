@@ -17,7 +17,8 @@ const routes: Routes = [
     component: FramePageComponent,
     children: [
       { path: '', component: ProductsPageComponent },
-      { path: 'cart', component: CartPageComponent, canActivate: [AuthService] },
+      { path: 'products', component: ProductsPageComponent },
+      { path: 'cart', component: CartPageComponent },
       { path: 'checkout', component: CheckoutPageComponent, canActivate: [AuthService] }
     ]
   },
@@ -32,7 +33,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
-  { path: 'reset-password', component: ResetPasswordPageComponent, canActivate: [AuthService] },
+  { path: 'reset-password', component: ResetPasswordPageComponent, },
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { CartUtil } from 'src/app/utils/cart.util';
-//import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-card',
@@ -11,7 +11,7 @@ export class ProductCardComponent implements OnInit {
   @Input() product: Product;
 
   constructor(
-    //private toastr: ToastrService
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -24,9 +24,9 @@ export class ProductCardComponent implements OnInit {
       1,
       this.product.price,
       this.product.images[0]
-    )
-    
-    //this.toastr.success(`${this.product.title} adicionado ao carrinho`, 'Produto Adicionado');
+    );
+
+    this.toastr.success(`${this.product.title} adicionado ao carrinho`, 'Produto Adicionado');
   }
 
 }
